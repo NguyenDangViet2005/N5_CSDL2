@@ -80,24 +80,24 @@ create table LOAIHANG
 alter table MATHANG
 add constraint FK_MACONGTY FOREIGN KEY (maCongTy) REFERENCES NHACUNGCAP(maCongTy)
 		on delete cascade
-on update cascade,
+		on update cascade,
 	constraint FK_MALOAIHANG FOREIGN KEY (maLoaiHang) REFERENCES LOAIHANG(maLoaiHang)
 		on delete cascade 
-on update cascade
+		on update cascade
 alter table DONDATHANG
 add constraint FK_MAKHACHHANG FOREIGN KEY (maKH) REFERENCES KHACHHANG(maKH)
 		on delete cascade 
-on update cascade,
+		on update cascade,
 	constraint FK_MANHANVIEN FOREIGN KEY (maNV) REFERENCES NHANVIEN(maNV)
 		on delete no action 
-on update no action
+		on update no action
 alter table CHITIETDATHANG
 add constraint FK_SOHOADON FOREIGN KEY (soHD) REFERENCES DONDATHANG(soHD)
 		on delete cascade 
-on update cascade,
+		on update cascade,
 	constraint FK_MAHANG FOREIGN KEY (maHang) REFERENCES MATHANG(maHang)
 		on delete cascade 
-on update cascade
+		on update cascade
 -- yêu cầu 2 tuần 6:
 alter table CHITIETDATHANG
 add constraint CK_SoLuong check(soLuong >= 1),default 1 for soLuong,
